@@ -12,7 +12,6 @@ export default function AppRouter() {
                 <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
                 <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
                 <Route path="/test" element={<PrivateRoute><TestPage /></PrivateRoute>} />
-                <Route path="*" element={<LoginPage />} /> // TODO 403 page
             </Routes>
         </Router>
     );

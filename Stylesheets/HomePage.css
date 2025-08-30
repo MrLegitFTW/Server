@@ -1,0 +1,4 @@
+.spotlight-cards {
+    display: flex;       /* puts children side by side */
+    gap: 1rem;           /* space between them */
+}
