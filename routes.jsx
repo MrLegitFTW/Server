@@ -1,17 +1,19 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage.jsx";
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <HomePage />
-    },
-    {
-        path: "/home",
-        element: <HomePage />
-    }
-]);
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import PrivateRoute from "./PrivateRoutes";
+import TestPage from "./pages/TestPage";
 
 export default function AppRouter() {
-    return <RouterProvider router={router} />;
+    return (
+        <Router>
+            <Routes>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
+                <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+                <Route path="/test" element={<PrivateRoute><TestPage /></PrivateRoute>} />
+                <Route path="*" element={<LoginPage />} /> // TODO 403 page
+            </Routes>
+        </Router>
+    );
 }
