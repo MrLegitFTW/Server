@@ -4,6 +4,10 @@ import logo from "/assets/lionfish.svg";
 import CardNav from "/components/HomeNav.jsx";
 import SplitText from "/components/SplitText.jsx";
 import "/Stylesheets/HomePage.css"
+import ServiceCard from "../components/ServiceCard.jsx";
+import SpotLightCard from "../components/SpotLightCard.jsx";
+import SpotlightCard from "../components/SpotLightCard.jsx";
+import PixelCard from "../components/PixelCard.jsx";
 
 const items = [
     {
@@ -167,16 +171,57 @@ export default function HomePage() {
                 </div>
             </div>
 
+            {/* Intermediate Section */}
+            <section className="intermediate-section" style={{
+                margin: -20,
+                width: "105%",
+            }}>
+                <h2 className="section-title">How can we help you?</h2>
+
+                <div className="service-section">
+                    <SpotlightCard spotlightColor="rgba(62, 146, 204, 0.35)">
+                        <a href="/services/jellyfin" className="service-link">
+                            <ServiceCard
+                                title="Fancy a Movie?"
+                                description="Stream your favorite films from our media library"
+                                color="#3E92CC"
+                            />
+                        </a>
+                    </SpotlightCard>
+
+                    <SpotlightCard spotlightColor="rgba(255, 107, 53, 0.35)">
+                        <a href="/services/ai" className="service-link">
+                            <ServiceCard
+                                title="Need Solutions?"
+                                description="Powerful AI tools for your projects"
+                                color="#FF6B35"
+                            />
+                        </a>
+                    </SpotlightCard>
+
+                    <SpotlightCard spotlightColor="rgba(76, 185, 68, 0.35)">
+                        <a href="/services/nas" className="service-link">
+                            <ServiceCard
+                                title="Storage?"
+                                description="Visit our storage options now!"
+                                color="#4CB944"
+                            />
+                        </a>
+                    </SpotlightCard>
+                </div>
+            </section>
+
+
+
 
             {/* About Section */}
             <div
                 style={{
                     margin: "-30px",
                     backgroundColor: "#000814",
-                    width: "105%",
+                    width: "102.1%",
                     color: "#ccc",
                     padding: "6rem 2rem 8rem",
-                    textAlign: "center",
                     borderTop: "1px solid rgba(255,255,255,0.1)",
                     fontFamily: "'Inter', sans-serif",
                     letterSpacing: "0.5px",
@@ -185,56 +230,111 @@ export default function HomePage() {
                 <h2
                     style={{
                         fontSize: "2.2rem",
-                        marginBottom: "1.5rem",
+                        marginBottom: "2rem",
                         color: "#fff",
                         fontWeight: "600",
+                        textAlign: "left", // Left-align heading
+                        maxWidth: "1100px",
+                        marginLeft: "auto",
+                        marginRight: "auto",
                     }}
                 >
                     About Me
                 </h2>
-                <p
+
+                <div
                     style={{
-                        fontSize: "1rem",
-                        maxWidth: "650px",
+                        display: "flex",
+                        justifyContent: "flex-start", // Start from left
+                        alignItems: "flex-start",     // Align top edges
+                        flexWrap: "wrap",
+                        gap: "3rem",
+                        maxWidth: "1100px",
                         margin: "0 auto",
-                        lineHeight: "1.8",
-                        color: "#bbb",
                     }}
                 >
-                    Hi, I’m <strong>Sebas</strong> — a Computer Science student at UGent with a
-                    deep passion for <em>cybersecurity</em>, <em>OS development</em>, and
-                    <em> programming</em>. I enjoy working on creative coding projects,
-                    experimenting with servers, and bringing ideas to life through design and
-                    technology.
-                </p>
-                <p
-                    style={{
-                        marginTop: "2rem",
-                        fontSize: "0.9rem",
-                        color: "#888",
-                        maxWidth: "600px",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        lineHeight: "1.6",
-                    }}
-                >
-                    This is my personal server — feel free to explore, learn, and enjoy your stay!
-                </p>
-                <p
-                    style={{
-                        marginTop: "1rem",
-                        fontSize: "0.8rem",
-                        color: "#888",
-                        maxWidth: "600px",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        lineHeight: "1.6",
-                        fontStyle: "italic",
-                    }}
-                >
-                    Currently exploring OS design, AI integration, and advanced web technologies.
-                </p>
+                    {/* About Text */}
+                    <div
+                        style={{
+                            flex: "1 1 500px",
+                            textAlign: "left",
+                            maxWidth: "600px",
+                        }}
+                    >
+                        <p
+                            style={{
+                                fontSize: "1rem",
+                                lineHeight: "1.8",
+                                color: "#bbb",
+                            }}
+                        >
+                            Hi, I’m <strong>Sebas</strong> — a Computer Science student at UGent with a
+                            deep passion for <em>cybersecurity</em>, <em>game development</em>, and
+                            <em> programming</em>. I enjoy working on creative coding projects,
+                            experimenting with servers, and bringing ideas to life through design and
+                            technology.
+                        </p>
+                        <p
+                            style={{
+                                marginTop: "2rem",
+                                fontSize: "0.9rem",
+                                color: "#888",
+                                lineHeight: "1.6",
+                            }}
+                        >
+                            This is my personal server — feel free to explore, learn, and enjoy your stay!
+                        </p>
+                        <p
+                            style={{
+                                marginTop: "1rem",
+                                fontSize: "0.8rem",
+                                color: "#888",
+                                lineHeight: "1.6",
+                                fontStyle: "italic",
+                            }}
+                        >
+                            Please feel free to contact me for any questions!
+                        </p>
+                    </div>
+
+                    {/* Pixel Card */}
+                    <div style={{ flex: "0 0 300px", display: "flex", justifyContent: "center", marginTop: "-10rem", marginLeft: "5rem" }}>
+                        <PixelCard variant="blue" className="about-pixel-card">
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    zIndex: 1,
+                                    textAlign: "center",
+                                    color: "#fff",
+                                    padding: "1rem",
+                                    width: "100%",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                }}
+                            >
+                                <h3 style={{ fontSize: "1rem", marginBottom: "2rem", fontWeight: "600", marginTop: "0" }}>
+                                    🏆 Employee of the Month
+                                </h3>
+                                <img
+                                    src="/assets/dog.webp"
+                                    alt="Employee of the Month"
+                                    style={{
+                                        width: "250px",
+                                        height: "250px",
+                                        borderRadius: "15px",
+                                        objectFit: "cover",
+                                        boxShadow: "0 0 15px rgba(0,0,0,0.5)",
+                                    }}
+                                />
+                            </div>
+                        </PixelCard>
+                    </div>
+                </div>
             </div>
+
+
+
 
         </>
     );
