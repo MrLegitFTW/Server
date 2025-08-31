@@ -9,6 +9,7 @@ export default function AppRouter() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/about/help" element={<TestPage />} />
+                <Route path="/about/website" element={<TestPage/>} />
             </Routes>
         </Router>
     );
