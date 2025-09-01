@@ -296,7 +296,7 @@ export default function HomePage() {
 
                     {/* Pixel Card */}
                     <div style={{ flex: "0 0 300px", display: "flex", justifyContent: "center", marginTop: "-10rem", marginLeft: "5rem" }}>
-                        <PixelCard variant="blue" className="about-pixel-card">
+                        <PixelCard className="about-pixel-card">
                             <div
                                 style={{
                                     position: "absolute",
