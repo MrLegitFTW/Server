@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from "react-icons/go";
 import "/Stylesheets/HomeNav.css";
+import {Link, useNavigate} from "react-router-dom";
 
 const CardNav = ({
                      logo,
@@ -137,6 +138,8 @@ const CardNav = ({
         if (el) cardsRef.current[i] = el;
     };
 
+    const navigate = useNavigate();
+
     return (
         <div className={`card-nav-container ${className}`}>
             <nav
@@ -165,8 +168,11 @@ const CardNav = ({
                         type="button"
                         className="card-nav-cta-button"
                         style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+                        onClick={() => navigate("/home")}
                     >
-                        My Profile
+                        <Link to="/home" className="card-nav-cta-button" style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}>
+                            Home
+                        </Link>
                     </button>
                 </div>
 

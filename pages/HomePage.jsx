@@ -88,7 +88,7 @@ export default function HomePage() {
                     padding: -10,
                     backgroundColor: "black",
                     minHeight: "100vh",
-                    width: "105vw",
+                    width: "102.1vw",
                     overflow: "hidden",
                     position: "relative",
                 }}
@@ -174,7 +174,7 @@ export default function HomePage() {
             {/* Intermediate Section */}
             <section className="intermediate-section" style={{
                 margin: -20,
-                width: "105%",
+                width: "102.1%",
             }}>
                 <h2 className="section-title">How can we help you?</h2>
 
@@ -211,15 +211,12 @@ export default function HomePage() {
                 </div>
             </section>
 
-
-
-
             {/* About Section */}
             <div
                 style={{
                     margin: "-30px",
                     backgroundColor: "#000814",
-                    width: "102.1%",
+                    width: "100%",
                     color: "#ccc",
                     padding: "6rem 2rem 8rem",
                     borderTop: "1px solid rgba(255,255,255,0.1)",

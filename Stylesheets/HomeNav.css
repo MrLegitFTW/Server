@@ -154,6 +154,10 @@
     opacity: 0.75;
 }
 
+.card-nav-cta-button {
+    text-decoration: none;
+}
+
 @media (max-width: 768px) {
     .card-nav-container {
         width: 90%;
