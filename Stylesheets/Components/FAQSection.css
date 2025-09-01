@@ -1,0 +1,100 @@
+.faq-section {
+    background-color: #0d1117; /* Dark terminal background */
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(3, 102, 214, 0.15); /* Subtle blue glow */
+    color: #c9d1d9; /* Light gray text for readability */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    border: 1px solid #1e2a35; /* Subtle dark border */
+    box-sizing: border-box;
+}
+
+.faq-section h2 {
+    color: #3A8DFF; /* Blue accent for heading */
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: -0.5px;
+    padding: 0 1rem;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.faq-item {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #161b22; /* Slightly lighter dark */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border: 1px solid #1e2a35;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 2px 6px rgba(58, 141, 255, 0.25);
+    border-color: #3A8DFF;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #c9d1d9;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.faq-question:hover {
+    background-color: rgba(58, 141, 255, 0.05); /* Subtle blue highlight */
+}
+
+.faq-question.open {
+    background-color: rgba(5, 127, 62, 0.15); /* Green tint when open */
+    color: #3A8DFF; /* Blue accent */
+}
+
+.faq-icon {
+    font-size: 1.25rem;
+    color: #8b949e; /* Neutral gray icon */
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+
+.faq-question.open .faq-icon {
+    transform: rotate(180deg);
+    color: #057f3e; /* Green when open */
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.25rem;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    color: #adbac7; /* Softer gray text */
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #161b22;
+    box-sizing: border-box;
+}
+
+.faq-answer.open {
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid #1e2a35;
+}

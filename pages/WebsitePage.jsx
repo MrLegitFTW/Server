@@ -115,7 +115,7 @@ export default function AboutWebsite() {
                         textAlign="center"
                     />
                     <p style={{ marginTop: "1rem", fontSize: "1.5rem", color: "#ccc" }}>
-                        A demo page showcasing interactive services, tutorials, and experiences.
+                        The story behind this website.
                     </p>
                 </div>
             </section>
@@ -129,6 +129,7 @@ export default function AboutWebsite() {
                 position: "relative",
                 overflow: "hidden",
                 margin: "-20px"
+
             }}>
                 <div style={{
                     position: "absolute",

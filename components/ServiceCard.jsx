@@ -1,5 +1,5 @@
 import React from "react";
-import "../Stylesheets/ServiceCard.css";
+import "../Stylesheets/Components/ServiceCard.css";
 
 export default function ServiceCard({ title, description, color }) {
     return (

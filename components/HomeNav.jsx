@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from "react-icons/go";
-import "/Stylesheets/HomeNav.css";
+import "/Stylesheets/Components/HomeNav.css";
 import {Link, useNavigate} from "react-router-dom";
 
 const CardNav = ({
