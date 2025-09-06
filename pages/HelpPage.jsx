@@ -6,6 +6,7 @@ import logo from "../assets/lionfish.svg";
 import SpotlightCard from "../components/SpotLightCard.jsx";
 import ServiceCard from "../components/ServiceCard.jsx";
 import FAQSection from "../components/FAQSection.jsx";
+import {Link} from "react-router-dom";
 
 const faqItems = [
     {
@@ -171,33 +172,33 @@ export default function AboutHelpPage() {
                 </h2>
                 <div className="service-section">
                     <SpotlightCard spotlightColor="rgba(62, 146, 204, 0.35)">
-                        <a href="/tutorials/jellyfin" className="service-link">
+                        <Link to="/tutorials/jellyfin" className="service-link">
                             <ServiceCard
                                 title="Streaming not working?"
                                 description="Learn how to make use of our media library."
                                 color="#3E92CC"
                             />
-                        </a>
+                        </Link>
                     </SpotlightCard>
 
                     <SpotlightCard spotlightColor="rgba(255, 107, 53, 0.35)">
-                        <a href="/tutorials/ai" className="service-link">
+                        <Link to="/tutorials/ai" className="service-link">
                             <ServiceCard
                                 title="Problems with our AI's?"
                                 description="Learn how to use them now!"
                                 color="#FF6B35"
                             />
-                        </a>
+                        </Link>
                     </SpotlightCard>
 
                     <SpotlightCard spotlightColor="rgba(76, 185, 68, 0.35)">
-                        <a href="/tutorials/nas" className="service-link">
+                        <Link to="/tutorials/nas" className="service-link">
                             <ServiceCard
                                 title="Storage problems?"
                                 description="Visit the NAS tutorial now!"
                                 color="#4CB944"
                             />
-                        </a>
+                        </Link>
                     </SpotlightCard>
 
                 </div>

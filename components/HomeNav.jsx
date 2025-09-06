@@ -186,22 +186,38 @@ const CardNav = ({
                         >
                             <div className="nav-card-label">{item.label}</div>
                             <div className="nav-card-links">
-                                {item.links?.map((lnk, i) => (
-                                    <a
-                                        key={`${lnk.label}-${i}`}
-                                        className="nav-card-link"
-                                        href={lnk.href}
-                                        aria-label={lnk.ariaLabel}
-                                        style={{ color: "#fff" }}
-                                    >
-                                        <GoArrowUpRight
-                                            className="nav-card-link-icon"
-                                            aria-hidden="true"
-                                        />
-                                        {lnk.label}
-                                    </a>
-                                ))}
+                                {item.links?.map((lnk, i) => {
+                                    const isServices = item.label === "Services"; // only services should reload
+
+                                    return isServices ? (
+                                        // External / backend handled by Nginx
+                                        <a
+                                            key={`${lnk.label}-${i}`}
+                                            className="nav-card-link"
+                                            href={lnk.href}
+                                            aria-label={lnk.ariaLabel}
+                                            style={{ color: "#fff" }}
+                                        >
+                                            <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
+                                            {lnk.label}
+                                        </a>
+                                    ) : (
+                                        // React Router SPA link
+                                        <Link
+                                            key={`${lnk.label}-${i}`}
+                                            className="nav-card-link"
+                                            to={lnk.href}
+                                            aria-label={lnk.ariaLabel}
+                                            style={{ color: "#fff" }}
+                                            onClick={() => setIsExpanded(false)} // close menu if you want
+                                        >
+                                            <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
+                                            {lnk.label}
+                                        </Link>
+                                    );
+                                })}
                             </div>
+
                         </div>
                     ))}
                 </div>
