@@ -1,11 +1,11 @@
 import React from "react";
 import LightRays from "/components/Lightveil.jsx";
 import logo from "/assets/lionfish.svg";
+import dogImg from "/assets/dog.webp";
 import CardNav from "/components/HomeNav.jsx";
 import SplitText from "/components/SplitText.jsx";
 import "/Stylesheets/HomePage.css"
 import ServiceCard from "../components/ServiceCard.jsx";
-import SpotLightCard from "../components/SpotLightCard.jsx";
 import SpotlightCard from "../components/SpotLightCard.jsx";
 import PixelCard from "../components/PixelCard.jsx";
 
@@ -314,7 +314,7 @@ export default function HomePage() {
                                     🏆 Employee of the Month
                                 </h3>
                                 <img
-                                    src="/assets/dog.webp"
+                                    src={dogImg}
                                     alt="Employee of the Month"
                                     style={{
                                         width: "250px",
