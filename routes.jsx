@@ -12,6 +12,10 @@ export default function AppRouter() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about/help" element={<AboutHelpPage/>} />
                 <Route path="/about/website" element={<AboutWebsite/>} />
+                <Route path="/tutorials/ai" element={<TestPage />} />
+                <Route path="/tutorials/jellyfin" element={<TestPage />} />
+                <Route path="/tutorials/notebook" element={<TestPage />} />
+                <Route path="/tutorials/nas" element={<TestPage />} />
             </Routes>
         </Router>
     );
