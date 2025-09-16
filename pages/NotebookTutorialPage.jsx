@@ -45,10 +45,26 @@ export default function NotebookTutorialPage() {
     const [name, setName] = useState("");
 
     const faqItems = [
-        { question: "What is this AI tutorial about?", answer: "It introduces you to using AI tools on this server, step by step." },
-        { question: "Do I need programming experience?", answer: "No — this tutorial is beginner-friendly and designed to guide you through basic usage." },
-        { question: "Can I use AI for my own projects?", answer: "Yes! You can integrate the provided AI tools into your personal or academic projects." },
-        { question: "Where can I ask for help?", answer: "Feel free to contact Sebas or check the Help section in the navigation menu." },
+        {
+            question: "What is the Jupyter Notebook service?",
+            answer: "Jupyter Notebook is an interactive coding environment where you can write and run code in languages like Python. It’s great for data analysis, machine learning, or experimenting with code directly in your browser."
+        },
+        {
+            question: "How do I access the Notebook?",
+            answer: "To access Jupyter Notebook:\n\n1. Request an account from the admin.\n2. Navigate to the Notebook page under **Services → Notebook**.\n3. Log in with your credentials to start using it."
+        },
+        {
+            question: "Can I install extra Python packages?",
+            answer: "Yes, but it depends on permissions. If you have access, you can install packages using a cell with:\n\n```\n!pip install package-name\n```\n\nFor permanent installations, please contact the admin."
+        },
+        {
+            question: "Can I access my files in the Notebook?",
+            answer: "Yes, you can upload files directly through the Jupyter interface or save files inside your workspace. Files are stored on the server and remain available the next time you log in."
+        },
+        {
+            question: "Why can’t I start a Notebook?",
+            answer: "Possible reasons include:\n\n- The server is down or restarting.\n- Your account does not have permissions.\n- You are not connected to Tailscale (if required).\n\nIf the issue continues, please contact support."
+        }
     ];
 
     return (
@@ -148,43 +164,31 @@ export default function NotebookTutorialPage() {
                         nextButtonText="Next"
                     >
                         <Step>
-                            <h3>Welcome!</h3>
-                            <p>This tutorial will guide you through using Jupyter notebook on this server. Click "Next" to continue.</p>
+                            <h3>Step 1: Request an Account</h3>
+                            <p>Contact the server admin and request an account to access the Jupyter Notebook service.</p>
                         </Step>
+
                         <Step>
-                            <h3>Step 2: Explore AI Services</h3>
-                            <SpotlightCard spotlightColor="rgba(0, 191, 255, 0.25)">
-                                <ServiceCard
-                                    title="Powerful AI Tools"
-                                    description="Access solutions for text, images, and more."
-                                    color="#00BFFF"
-                                />
-                            </SpotlightCard>
-                            <p style={{ marginTop: "1rem" }}>This is how you can access AI features.</p>
+                            <h3>Step 2: Access the Notebook Page</h3>
+                            <p>Go to <strong>Services → Notebook</strong> in the menu to open the Jupyter Notebook environment.</p>
                         </Step>
+
                         <Step>
-                            <h3>Step 3: Try It Yourself</h3>
-                            <p>Enter your name to personalize the experience:</p>
-                            <input
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="Your name?"
-                                style={{
-                                    marginTop: "1rem",
-                                    padding: "0.5rem 1rem",
-                                    borderRadius: "10px",
-                                    border: "none",
-                                    outline: "none",
-                                    width: "100%",
-                                    maxWidth: "300px",
-                                    backgroundColor: "#003060",
-                                    color: "#fff",
-                                }}
-                            />
+                            <h3>Step 3: Log In</h3>
+                            <p>Use the account credentials provided by the admin to log in to the Notebook interface.</p>
                         </Step>
+
                         <Step>
-                            <h3>Final Step 🎉</h3>
-                            <p>Thanks{name ? `, ${name}` : ""}! You’ve completed the tutorial.</p>
+                            <h3>Step 4: Start Coding</h3>
+                            <p>
+                                Once logged in, you can create new notebooks, run Python code, and upload files directly from your browser.
+                                Example: try running <code>print("Hello, world!")</code> in a new cell.
+                            </p>
+                        </Step>
+
+                        <Step>
+                            <h3>All Done 🎉</h3>
+                            <p>You’re ready to use Jupyter Notebook for coding, data analysis, or experimenting with Python.</p>
                         </Step>
                     </Stepper>
                 </div>

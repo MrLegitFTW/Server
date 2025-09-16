@@ -45,10 +45,22 @@ export default function NASTutorialPage() {
     const [name, setName] = useState("");
 
     const faqItems = [
-        { question: "What is this AI tutorial about?", answer: "It introduces you to using AI tools on this server, step by step." },
-        { question: "Do I need programming experience?", answer: "No — this tutorial is beginner-friendly and designed to guide you through basic usage." },
-        { question: "Can I use AI for my own projects?", answer: "Yes! You can integrate the provided AI tools into your personal or academic projects." },
-        { question: "Where can I ask for help?", answer: "Feel free to contact Sebas or check the Help section in the navigation menu." },
+        {
+            question: "What is a NAS?",
+            answer: "A NAS (Network Attached Storage) is a dedicated storage device that lets you store, share, and access files over your local network or remotely. Think of it as a personal cloud server for your home or office."
+        },
+        {
+            question: "Can I access the NAS remotely?",
+            answer: "Yes, but you may need to connect via Tailscale or VPN first, depending on the server’s setup. Once connected, you can access the NAS as if you were on the local network."
+        },
+        {
+            question: "What can I store on the NAS?",
+            answer: "You can store documents, photos, music, videos, and backups. The NAS is designed for reliable file sharing and long-term storage."
+        },
+        {
+            question: "Why can’t I connect to the NAS?",
+            answer: "Possible reasons:\n\n- You are not connected to the network or Tailscale.\n- You entered the wrong address.\n- Your account does not have permissions.\n- The NAS service might be temporarily down.\n\nPlease contact support if the issue persists."
+        }
     ];
 
     return (
@@ -148,45 +160,44 @@ export default function NASTutorialPage() {
                         nextButtonText="Next"
                     >
                         <Step>
-                            <h3>Welcome!</h3>
-                            <p>This tutorial will guide you through using NAS on this server. Click "Next" to continue.</p>
+                            <h3>Step 1: Request an Account</h3>
+                            <p>Contact the server admin and request an account to access the NAS.</p>
                         </Step>
+
                         <Step>
-                            <h3>Step 2: Explore AI Services</h3>
-                            <SpotlightCard spotlightColor="rgba(0, 191, 255, 0.25)">
-                                <ServiceCard
-                                    title="Powerful AI Tools"
-                                    description="Access solutions for text, images, and more."
-                                    color="#00BFFF"
-                                />
-                            </SpotlightCard>
-                            <p style={{ marginTop: "1rem" }}>This is how you can access AI features.</p>
+                            <h3>Step 2: Access the NAS Page</h3>
+                            <p>Go to <strong>Services → NAS</strong> and log in with your account credentials.</p>
                         </Step>
+
                         <Step>
-                            <h3>Step 3: Try It Yourself</h3>
-                            <p>Enter your name to personalize the experience:</p>
-                            <input
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="Your name?"
-                                style={{
-                                    marginTop: "1rem",
-                                    padding: "0.5rem 1rem",
-                                    borderRadius: "10px",
-                                    border: "none",
-                                    outline: "none",
-                                    width: "100%",
-                                    maxWidth: "300px",
-                                    backgroundColor: "#003060",
-                                    color: "#fff",
-                                }}
-                            />
+                            <h3>Step 3: Map the NAS on Windows</h3>
+                            <p>While connected to <strong>Tailscale</strong>, you can map the NAS as a drive in File Explorer:</p>
+                            <ol style={{ marginLeft: "1.5rem", textAlign: "left" }}>
+                                <li>Open File Explorer.</li>
+                                <li>Right-click on <em>This PC</em> → <em>Map network drive...</em>.</li>
+                                <li>Choose a drive letter (e.g., <code>Z:</code>).</li>
+                                <li>Enter the NAS path: <code>\\\\nas-server</code> (replace with the actual address).</li>
+                                <li>Click <em>Finish</em> and log in with your NAS account.</li>
+                            </ol>
                         </Step>
+
                         <Step>
-                            <h3>Final Step 🎉</h3>
-                            <p>Thanks{name ? `, ${name}` : ""}! You’ve completed the tutorial.</p>
+                            <h3>Step 4: Connect to the NAS on Mac</h3>
+                            <p>While connected to <strong>Tailscale</strong>, you can mount the NAS as a network drive in Finder:</p>
+                            <ol style={{ marginLeft: "1.5rem", textAlign: "left" }}>
+                                <li>Open Finder.</li>
+                                <li>Click <em>Go</em> → <em>Connect to Server...</em>.</li>
+                                <li>Enter the address: <code>smb://nas-server</code> (replace with the actual address).</li>
+                                <li>Click <em>Connect</em> and log in with your NAS account.</li>
+                            </ol>
+                        </Step>
+
+                        <Step>
+                            <h3>All Done 🎉</h3>
+                            <p>You now have full access to the NAS! Use it like a normal drive to store and manage your files.</p>
                         </Step>
                     </Stepper>
+
                 </div>
             </section>
 
