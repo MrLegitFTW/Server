@@ -45,10 +45,22 @@ export default function MediaTutorialPage() {
     const [name, setName] = useState("");
 
     const faqItems = [
-        { question: "What is this AI tutorial about?", answer: "It introduces you to using AI tools on this server, step by step." },
-        { question: "Do I need programming experience?", answer: "No — this tutorial is beginner-friendly and designed to guide you through basic usage." },
-        { question: "Can I use AI for my own projects?", answer: "Yes! You can integrate the provided AI tools into your personal or academic projects." },
-        { question: "Where can I ask for help?", answer: "Feel free to contact Sebas or check the Help section in the navigation menu." },
+        {
+            question: "What is Jellyfin?",
+            answer: "Jellyfin is like your personal Netflix for home videos, movies, and music. It's a free app that organizes all your media in one place so you can: • Watch your movies & shows on any device • Listen to your music collection • View family photos • Share with household members.\n\nEverything stays private on this server - no subscriptions or sharing with strangers."
+        },
+        {
+            question: "How do I access Jellyfin?",
+            answer: "To access Jellyfin:\n\n1. Contact an admin to request access.\n2. Once approved, log in via web or app.\n3. Enjoy browsing and streaming your content!"
+        },
+        {
+            question: "How do I set up the Jellyfin app?",
+            answer: "Install the Jellyfin app on your device, then connect to: `pi.buri-lionfish.ts.net/services/jellyfin`. Log in with your account and start streaming."
+        },
+        {
+            question: "Why can I not connect to the server?",
+            answer: "There could be multiple reasons why you cannot connect. Either you're not connected to the tailscale service, you have incorrectly inserted the server address into the Jellyfin app or the service is temporarily down. Please contact support if anything is unclear.",
+        }
     ];
 
     return (
@@ -148,43 +160,24 @@ export default function MediaTutorialPage() {
                         nextButtonText="Next"
                     >
                         <Step>
-                            <h3>Welcome!</h3>
-                            <p>This tutorial will guide you through using Jellyfin on this server. Click "Next" to continue.</p>
+                            <h3>Step 1: Request an Account</h3>
+                            <p>To begin, you’ll need an account. Please contact the server admin and request access.</p>
                         </Step>
                         <Step>
-                            <h3>Step 2: Explore AI Services</h3>
-                            <SpotlightCard spotlightColor="rgba(0, 191, 255, 0.25)">
-                                <ServiceCard
-                                    title="Powerful AI Tools"
-                                    description="Access solutions for text, images, and more."
-                                    color="#00BFFF"
-                                />
-                            </SpotlightCard>
-                            <p style={{ marginTop: "1rem" }}>This is how you can access AI features.</p>
+                            <h3>Step 2: Download the App</h3>
+                            <p>Once you have your account, (optionally) download the Jellyfin app from the <strong>Google Play Store</strong> or <strong>Apple App Store</strong>.
+                             Else you can find it on this website under the services and jellyfin page.</p>
                         </Step>
                         <Step>
-                            <h3>Step 3: Try It Yourself</h3>
-                            <p>Enter your name to personalize the experience:</p>
-                            <input
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="Your name?"
-                                style={{
-                                    marginTop: "1rem",
-                                    padding: "0.5rem 1rem",
-                                    borderRadius: "10px",
-                                    border: "none",
-                                    outline: "none",
-                                    width: "100%",
-                                    maxWidth: "300px",
-                                    backgroundColor: "#003060",
-                                    color: "#fff",
-                                }}
-                            />
+                            <h3>Step 3: Connect to the Server</h3>
+                            <p>If you downloaded the app then open it and connect to the server at:</p>
+                            <code style={{ display: "block", margin: "1rem 0", background: "#001833", padding: "0.75rem", borderRadius: "10px" }}>
+                                http://pi.buri-lionfish.ts.net/services/jellyfin
+                            </code>
                         </Step>
                         <Step>
-                            <h3>Final Step 🎉</h3>
-                            <p>Thanks{name ? `, ${name}` : ""}! You’ve completed the tutorial.</p>
+                            <h3>Step 4: Log In & Enjoy 🎉</h3>
+                            <p>Use your account credentials to log in. You can now browse and enjoy movies, shows, music, and more!</p>
                         </Step>
                     </Stepper>
                 </div>

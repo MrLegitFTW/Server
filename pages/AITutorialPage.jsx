@@ -45,10 +45,26 @@ export default function AITutorialPage() {
     const [name, setName] = useState("");
 
     const faqItems = [
-        { question: "What is this AI tutorial about?", answer: "It introduces you to using AI tools on this server, step by step." },
-        { question: "Do I need programming experience?", answer: "No — this tutorial is beginner-friendly and designed to guide you through basic usage." },
-        { question: "Can I use AI for my own projects?", answer: "Yes! You can integrate the provided AI tools into your personal or academic projects." },
-        { question: "Where can I ask for help?", answer: "Feel free to contact Sebas or check the Help section in the navigation menu." },
+        {
+            question: "Who can access the AI tools?",
+            answer: "AI tools are available to approved users only. Please contact an administrator to request access."
+        },
+        {
+            question: "What AI features are available?",
+            answer: "We offer text generation, summarization, image generation, and coding assistance tools customized to your needs."
+        },
+        {
+            question: "How do I get started with AI?",
+            answer: "After getting approval, log in to your account and navigate to the AI Playground section. Tutorials are available to guide you through."
+        },
+        {
+            question: "Are my inputs private?",
+            answer: "Yes, all AI inputs and outputs stay within our secure server and are not shared externally."
+        },
+        {
+            question: "Who do I contact for AI support?",
+            answer: "For questions or issues, reach out to our support team via the contact info on the About page."
+        }
     ];
 
     return (
@@ -148,43 +164,24 @@ export default function AITutorialPage() {
                         nextButtonText="Next"
                     >
                         <Step>
-                            <h3>Welcome!</h3>
-                            <p>This tutorial will guide you through using AI on this server. Click "Next" to continue.</p>
+                            <h3>Step 1: Request an Account</h3>
+                            <p>Start by requesting an account. Please provide your email address to the server admin.</p>
                         </Step>
                         <Step>
-                            <h3>Step 2: Explore AI Services</h3>
-                            <SpotlightCard spotlightColor="rgba(0, 191, 255, 0.25)">
-                                <ServiceCard
-                                    title="Powerful AI Tools"
-                                    description="Access solutions for text, images, and more."
-                                    color="#00BFFF"
-                                />
-                            </SpotlightCard>
-                            <p style={{ marginTop: "1rem" }}>This is how you can access AI features.</p>
+                            <h3>Step 2: Open the AI Page</h3>
+                            <p>Navigate to the <strong>Services → AI</strong> page to access the AI tools.</p>
                         </Step>
                         <Step>
-                            <h3>Step 3: Try It Yourself</h3>
-                            <p>Enter your name to personalize the experience:</p>
-                            <input
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="Your name?"
-                                style={{
-                                    marginTop: "1rem",
-                                    padding: "0.5rem 1rem",
-                                    borderRadius: "10px",
-                                    border: "none",
-                                    outline: "none",
-                                    width: "100%",
-                                    maxWidth: "300px",
-                                    backgroundColor: "#003060",
-                                    color: "#fff",
-                                }}
-                            />
+                            <h3>Step 3: Log In</h3>
+                            <p>Log in with the credentials that were provided to you when your account was created.</p>
                         </Step>
                         <Step>
-                            <h3>Final Step 🎉</h3>
-                            <p>Thanks{name ? `, ${name}` : ""}! You’ve completed the tutorial.</p>
+                            <h3>Step 4: Select a Model</h3>
+                            <p>Once logged in, check the top-left corner of the page. You may need to select or change the model before you can use the AI.</p>
+                        </Step>
+                        <Step>
+                            <h3>Step 5: Enjoy 🎉</h3>
+                            <p>You’re all set! Start exploring and using the AI services.</p>
                         </Step>
                     </Stepper>
                 </div>
